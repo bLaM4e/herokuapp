@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import mainapp.views as mainapp
+from django.views.generic import RedirectView
 
 admin.autodiscover()
 
 urlpatterns = [
     path('', mainapp.index),
     path('admin/', admin.site.urls),
+    path(r'^favicon\.ico$', RedirectView.as_view(url='/static/images/favicon.ico'), name='favicon'),
 ]
