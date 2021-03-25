@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 import mainapp.views as mainapp
 
+admin.autodiscover()
+
 urlpatterns = [
     path('', mainapp.index),
     path('admin/', admin.site.urls),
